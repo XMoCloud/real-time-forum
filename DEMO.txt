@@ -1,0 +1,3 @@
+Browser-only showcase of the Go + JavaScript Real Time Forum.
+Uses fictional data, browser-local storage and scripted character replies.
+Persona 5 Royal artwork and branding belong to ATLUS / SEGA. Fan-made educational project.

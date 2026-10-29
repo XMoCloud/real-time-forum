@@ -1,0 +1,266 @@
+/* Royal pass: paper, ink, silhouettes. Existing scene artwork remains the stage. */
+:root { --p5-paper: #f5f3ee; --p5-ink: #0a0a0d; }
+[hidden] { display: none !important; }
+.app-root, .p5-forum-wrap { height: 100dvh; }
+button, input, textarea { -webkit-tap-highlight-color: transparent; }
+button:disabled { cursor: wait; opacity: .65; }
+button:focus-visible, [tabindex="0"]:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+.p5-member-link { appearance: none; border: 0; background: transparent; padding: 0; color: inherit; cursor: pointer; text-align: left; }
+.p5-member-link:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--p5-red-2); text-underline-offset: 4px; }
+.p5-nav-brand { appearance: none; border: 0; background: transparent; color: inherit; }
+
+/* The Request menu lives in the existing right-hand reading column. */
+.p5-feed-container { padding: 0 0 110px; max-width: 620px; gap: 22px; }
+.p5-feed-list { display: flex; flex-direction: column; gap: 22px; }
+.p5-request-board { color: #fff; position: relative; padding: 0 0 14px; border-bottom: 2px solid #d2d2d2; }
+.p5-request-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.p5-request-heading h1 { margin: 0; font: 32px/.95 "Expose", sans-serif; text-transform: uppercase; transform: rotate(-2deg); text-shadow: 3px 3px #000; }
+.p5-request-count { background: var(--p5-red); padding: 4px 10px; font: 15px "FranklinGothic", sans-serif; white-space: nowrap; transform: rotate(2deg); }
+.p5-request-tabs { display: flex; flex-wrap: wrap; gap: 5px; }
+.p5-request-tab { position: relative; border: 0; background: #080808; color: #d2d2d2; padding: 9px 11px; font: 14px/1 "FranklinGothic", sans-serif; text-transform: uppercase; cursor: pointer; isolation: isolate; }
+.p5-request-tab::before { content: ""; position: absolute; inset: 0; background: #080808; border-bottom: 1px solid #777; z-index: -1; transform: skewX(-10deg); }
+.p5-request-tab[aria-pressed="true"] { color: #fff; background: transparent; padding-left: 21px; }
+.p5-request-tab[aria-pressed="true"]::before { background: #e60012; border-color: #e60012; transform: skewX(-10deg) rotate(-2deg); }
+.p5-request-tab[aria-pressed="true"]::after { content: ""; position: absolute; left: 9px; top: 12px; border-left: 6px solid #fff; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+.p5-request-tab:hover { color: #fff; transform: translateY(-2px); }
+.p5-board-empty { border: 2px solid #ccc; background: #090909; padding: 35px 24px; }
+.p5-board-empty strong { font: 27px "Expose", sans-serif; }
+.p5-board-empty p { font: 17px "FranklinGothic", sans-serif; }
+.p5-feed-post-header { display: block; }
+.p5-feed-title { white-space: normal; max-width: none; overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; font-size: 23px; line-height: 1.12; margin-top: 5px; }
+.p5-feed-desc { white-space: normal; max-width: none; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; font-size: 15px; line-height: 1.5; color: #d2d2d2; overflow-wrap: anywhere; }
+.p5-feed-desc::after { content: none; }
+.p5-feed-avatar-wrap { align-self: flex-start; }
+.p5-feed-author { font: 13px "FranklinGothic", sans-serif; letter-spacing: 1px; text-transform: uppercase; color: #d2d2d2; }
+button.p5-post-category-badge { color: #fff; border: 0; border-top: 1px solid #e60012; cursor: pointer; font-family: "OptimaNova", serif; font-style: italic; }
+.p5-feed-replies { margin-left: auto; font: 13px "FranklinGothic", sans-serif; color: #bbb; }
+.p5-inpost-body { overflow-wrap: anywhere; white-space: pre-wrap; }
+.p5-inpost-author { font-family: "FranklinGothic", sans-serif; }
+.p5-inpost-title { overflow-wrap: anywhere; }
+.p5-comment-text { overflow-wrap: anywhere; white-space: pre-wrap; }
+.p5-comment-arrival { animation: p5-reply-snap 220ms ease-out both; }
+@keyframes p5-reply-snap { from { transform: translateX(18px) rotate(1deg); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Keep the phone silhouette; make room for the person holding the conversation. */
+.p5-dm-user { gap: 8px; padding: 10px 12px; }
+.p5-dm-portrait-button { appearance: none; border: 0; background: none; padding: 0; cursor: pointer; flex-shrink: 0; }
+.p5-dm-avatar { width: 44px; height: 48px; margin: 0; }
+.p5-dm-status-dot { width: 8px; height: 8px; margin: 0; }
+.p5-dm-name { max-width: none; min-width: 0; overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; font: 16px/1.15 "FranklinGothic", sans-serif; letter-spacing: 0; }
+.p5-dm-icon { width: 27px; }
+.p5-dm-unread-badge { flex-shrink: 0; min-width: 17px; padding: 1px 3px; font-size: 11px; }
+.p5-chat-header { left: 27%; right: 2%; transform: none; padding: 8px 0; }
+.p5-chat-username { max-width: none; font-size: clamp(28px, 3.2vw, 48px); white-space: normal; overflow: visible; overflow-wrap: anywhere; line-height: 1.05; }
+.p5-chat-status { box-shadow: none; }
+.p5-dm-close-btn:focus-visible { outline-color: #fff; }
+.p5-chat-tools { position: absolute; z-index: 11; top: 12%; right: 10%; display: flex; }
+.p5-chat-tools .p5-dm-close-btn { position: relative; inset: auto; width: 44px; height: 44px; border: 3px solid #fff; background: #080808; color: #fff; font-size: 23px; transform: rotate(-5deg); }
+.p5-chat-tools .p5-dm-close-btn:hover { background: #fff; color: #000; transform: rotate(3deg) scale(1.05); }
+
+/* A short diagonal cut crosses the reading surface, not the whole application. */
+.p5-content-stage { min-height: 100%; }
+.p5-page-cut { position: absolute; z-index: 65; pointer-events: none; overflow: hidden; visibility: hidden; contain: paint; }
+.p5-page-cut-panel { position: absolute; inset: 0 -18vh; background: #080808; border-left: 14px solid #fff; border-right: 8px solid #e60012; transform: translateX(-110%) skewX(-12deg); }
+.p5-page-cut.is-cutting { visibility: visible; pointer-events: auto; }
+.p5-page-cut.is-cutting .p5-page-cut-panel { will-change: transform; }
+.p5-inpost-container { transition: opacity 160ms ease, transform 160ms ease; }
+
+/* The calling card is the form itself: inked headline, paper message, stamped file. */
+.p5-composer { max-width: 680px; padding: 30px 20px 60px 120px; margin-right: 40px; }
+.p5-composer-masthead { display: flex; justify-content: space-between; gap: 12px; color: #fff; font: 12px "FranklinGothic", sans-serif; letter-spacing: 1px; padding: 0 100px 0 6px; }
+.p5-calling-card { position: relative; background: #e60012; color: #090909; border: 4px solid #080808; outline: 3px solid var(--p5-paper); box-shadow: 12px 12px 0 #080808, 14px 14px 0 #999; padding: 24px 30px 26px; isolation: isolate; }
+.p5-calling-card::before { content: ""; pointer-events: none; position: absolute; inset: 0; z-index: -1; opacity: .1; background: repeating-radial-gradient(circle at 100% 0, transparent 0 31px, #000 32px 34px, transparent 35px 65px); }
+.p5-card-heading { display: flex; align-items: center; justify-content: space-between; margin: -10px 0 20px; gap: 15px; }
+.p5-card-headline { transform: rotate(-4deg); font-family: "Expose", sans-serif; text-transform: uppercase; line-height: .85; }
+.p5-card-headline span { display: table; font-size: 39px; color: #fff; background: #0a0a0d; padding: 6px 10px 3px; transform: rotate(1deg); }
+.p5-card-headline strong { display: block; font-size: 84px; font-weight: 400; margin: 5px 0 0 5px; letter-spacing: -2px; }
+.p5-card-seal { width: 100px; height: 100px; object-fit: contain; transform: rotate(9deg); filter: grayscale(1) contrast(3); }
+.p5-card-label { display: table; background: #090909; color: #fff; font: 13px "FranklinGothic", sans-serif; letter-spacing: 1px; padding: 4px 9px; transform: rotate(-1deg); margin-bottom: 8px; }
+.p5-card-title-input, .p5-card-body-input { display: block; width: 100%; box-sizing: border-box; border: 2px solid #080808; border-radius: 0; color: #090909; background: var(--p5-paper); padding: 12px 15px; resize: vertical; }
+.p5-card-title-input { font: 27px/1.08 "FranklinGothic", sans-serif; min-height: 85px; transform: rotate(-.7deg); margin-bottom: 22px; }
+.p5-card-body-input { font: 17px/1.65 "OptimaNova", Georgia, serif; min-height: 150px; transform: rotate(.6deg); background: #0a0a0d; color: #fff; border: 3px solid #f5f3ee; box-shadow: 4px 4px 0 #080808; }
+.p5-card-title-input::placeholder, .p5-card-body-input::placeholder { color: #666; opacity: 1; }
+.p5-card-body-input::placeholder { color: #ccc; }
+.p5-card-title-input:focus-visible, .p5-card-body-input:focus-visible { outline: 3px solid #000; outline-offset: 3px; }
+.p5-card-counter { display: block; text-align: right; margin: 8px 0 18px; font: 12px "FranklinGothic", sans-serif; }
+.p5-card-categories { border: 0; padding: 0; margin: 0 0 22px; min-width: 0; }
+.p5-card-stamps { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 5px; }
+.p5-category-stamp { position: relative; cursor: pointer; }
+.p5-stamp-check { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.p5-category-stamp span { display: block; padding: 8px 10px; color: #000; border: 2px solid #090909; font: 14px "FranklinGothic", sans-serif; text-transform: uppercase; transform: rotate(var(--stamp-angle)); transition: transform 100ms ease; }
+.p5-stamp-check:checked + span { background: #090909; color: #fff; box-shadow: 3px 3px 0 #fff; }
+.p5-stamp-check:checked + span::before { content: "✓ "; }
+.p5-stamp-check:focus-visible + span { outline: 3px solid #fff; outline-offset: 3px; }
+.p5-category-stamp:hover span { transform: rotate(0) translateY(-2px); }
+.p5-card-signature { display: flex; justify-content: flex-end; align-items: baseline; gap: 12px; border-top: 2px solid #000; padding-top: 14px; }
+.p5-card-signature span { font: 12px "FranklinGothic", sans-serif; }
+.p5-card-signature strong { font: 27px "Expose", sans-serif; text-transform: uppercase; overflow-wrap: anywhere; }
+.p5-card-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: 20px; }
+.p5-card-hint { font: italic 13px Georgia, serif; }
+.p5-card-send { border: 2px solid #000; border-radius: 0; background: #090909; color: #fff; padding: 13px 18px; font: 20px "FranklinGothic", sans-serif; text-transform: uppercase; transform: rotate(-2deg); cursor: pointer; box-shadow: 3px 3px 0 #fff; }
+.p5-card-send:hover { background: #fff; color: #000; box-shadow: 4px 4px 0 #000; }
+.p5-card-sent { display: none; position: absolute; top: 35%; left: 50%; transform: translate(-50%,-50%) rotate(-14deg); padding: 9px 25px; border: 8px double #000; background: #fff; color: #d4001a; font: 90px "Expose", sans-serif; box-shadow: 8px 8px #000; pointer-events: none; }
+.is-sent .p5-card-sent { display: block; animation: p5-stamp-land 240ms cubic-bezier(.2,.8,.2,1) both; }
+@keyframes p5-stamp-land { from { opacity: 0; transform: translate(-50%,-50%) rotate(-20deg) scale(1.8); } to { opacity: 1; transform: translate(-50%,-50%) rotate(-14deg) scale(1); } }
+
+/* Confidant file: one bold portrait, a codename, and the member's actual record. */
+.p5-dossier { width: min(860px, calc(100vw - 60px)); max-height: calc(100dvh - 50px); padding: 0; border: 0; overflow: auto; background: transparent; color: #fff; scrollbar-color: #fff #080808; }
+.p5-dossier::backdrop { background: rgb(0 0 0 / .85); }
+.p5-dossier-sheet { position: relative; background: #0a0a0d; border: 3px solid #f5f3ee; border-top: 9px solid #e60012; padding: 25px 30px 30px; overflow: hidden; animation: p5-dossier-open 220ms ease-out both; }
+@keyframes p5-dossier-open { from { opacity: 0; transform: translateY(24px) rotate(-2deg); } to { opacity: 1; transform: none; } }
+.p5-dossier-close { position: absolute; top: 12px; right: 15px; z-index: 2; background: #e60012; color: #fff; border: 2px solid #fff; width: 40px; height: 40px; transform: rotate(5deg); font: 30px/1 "FranklinGothic", sans-serif; cursor: pointer; }
+.p5-dossier-eyebrow { margin: 0 0 10px; font: 13px "FranklinGothic", sans-serif; letter-spacing: 2px; }
+.p5-dossier-title { margin: 0 0 24px -8px; font: clamp(40px, 6vw, 76px)/1 "Expose", sans-serif; text-transform: uppercase; transform: rotate(-3deg); }
+.p5-dossier-content { display: grid; grid-template-columns: 42% 1fr; gap: 25px; }
+.p5-dossier-portrait { position: relative; min-height: 255px; display: flex; align-items: center; justify-content: center; background: #e60012; clip-path: polygon(5% 0, 100% 4%, 95% 100%, 0 95%); isolation: isolate; }
+.p5-dossier-portrait::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, transparent 0 30px, #080808 31px 35px, transparent 36px 65px); opacity: .14; }
+.p5-dossier-portrait img { width: 88%; max-height: 260px; object-fit: contain; position: relative; transform: rotate(-8deg); filter: drop-shadow(7px 7px #080808); }
+.p5-dossier-watermark { position: absolute; left: -12px; top: 12px; font: 46px "Expose", sans-serif; color: #090909; transform: rotate(-12deg); }
+.p5-dossier-file-number { position: absolute; bottom: 18px; left: 25px; background: #090909; color: #fff; padding: 5px 9px; font: 13px "FranklinGothic", sans-serif; letter-spacing: 1px; transform: rotate(-3deg); }
+.p5-dossier-info { min-width: 0; padding-top: 18px; }
+.p5-dossier-label { display: table; background: #fff; color: #000; padding: 3px 9px; font: 13px "FranklinGothic", sans-serif; letter-spacing: 1px; transform: rotate(-2deg); }
+.p5-dossier-name { margin: 12px 0; font: clamp(28px, 3.8vw, 48px)/1.05 "Expose", sans-serif; text-transform: uppercase; overflow-wrap: anywhere; }
+.p5-dossier-status { display: inline-flex; align-items: center; gap: 7px; font: 13px "FranklinGothic", sans-serif; letter-spacing: 1px; color: #bbb; }
+.p5-dossier-status::before { content: ""; width: 7px; height: 7px; background: #999; transform: rotate(45deg); }
+.p5-dossier-status.is-online::before { background: #00ff88; }
+.p5-dossier-stats { display: flex; gap: 35px; border-top: 2px solid #888; padding-top: 13px; margin: 22px 0; }
+.p5-dossier-stats dd { margin: 0; font: 42px "FranklinGothic", sans-serif; }
+.p5-dossier-stats dt { font: 13px "FranklinGothic", sans-serif; text-transform: uppercase; color: #ccc; }
+.p5-dossier-message { border: 0; background: #e60012; color: #fff; padding: 12px 18px; font: 18px "FranklinGothic", sans-serif; cursor: pointer; transform: skewX(-7deg) rotate(-1deg); }
+.p5-dossier-message:hover { background: #fff; color: #000; }
+.p5-dossier-own { font: 16px "FranklinGothic", sans-serif; color: #ccc; }
+.p5-dossier-history { grid-column: 1/-1; }
+.p5-dossier-history h4 { margin: 8px 0 12px; border-left: 6px solid #e60012; padding-left: 9px; font: 20px "FranklinGothic", sans-serif; }
+.p5-dossier-post { width: 100%; display: flex; align-items: baseline; gap: 14px; padding: 12px 4px; background: none; border: 0; border-bottom: 1px solid #555; color: #fff; text-align: left; font: 18px/1.2 "FranklinGothic", sans-serif; cursor: pointer; }
+.p5-dossier-post span:first-child { color: #e60012; font-size: 15px; }
+.p5-dossier-post span:nth-child(2) { flex: 1; overflow-wrap: anywhere; }
+.p5-dossier-post:hover { background: #e60012; padding-left: 12px; }
+.p5-dossier-post:hover span:first-child { color: #fff; }
+.p5-dossier-history > p, .p5-dossier-loading { font: 18px "FranklinGothic", sans-serif; color: #ccc; }
+
+/* Crop only the portrait area of the existing notification art with CSS. */
+.p5-feedback { display: flex; align-items: center; gap: 8px; position: relative; margin: 18px 0 8px; text-align: left; color: #fff; }
+.p5-feedback-portrait { position: relative; width: 72px; height: 92px; flex: 0 0 72px; overflow: hidden; }
+.p5-feedback-portrait img { position: absolute; height: 100%; width: auto; max-width: none; left: 0; top: 0; }
+.p5-feedback-dialogue { position: relative; flex: 1; min-width: 0; padding: 19px 14px 12px; background: #090909; border: 2px solid #f5f3ee; box-shadow: 3px 3px 0 #090909; transform: rotate(-1deg); }
+.p5-feedback-dialogue::before { content: ""; position: absolute; left: -12px; top: 20px; border-right: 12px solid #f5f3ee; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+.p5-feedback-speaker { position: absolute; left: 8px; top: -12px; padding: 2px 8px; background: #f5f3ee; color: #090909; font: 14px "FranklinGothic", sans-serif; text-transform: uppercase; }
+.p5-feedback-message { margin: 0; font: 18px/1.3 "FranklinGothic", sans-serif; overflow-wrap: anywhere; }
+.p5-feedback[data-kind="error"] .p5-feedback-speaker { background: #e60012; color: #fff; }
+.p5-feedback-notice { position: fixed; z-index: 11000; bottom: 24px; left: 24px; width: min(500px, calc(100vw - 48px)); margin: 0; filter: drop-shadow(4px 6px 0 #000); animation: p5-reply-snap 180ms ease-out both; }
+.p5-feedback-notice .p5-feedback-dialogue { padding-right: 36px; }
+.p5-feedback-dismiss { position: absolute; top: -6px; right: 0; border: 0; background: #e60012; color: #fff; font: 26px "FranklinGothic", sans-serif; width: 32px; height: 32px; cursor: pointer; transform: rotate(5deg); }
+.p5-input[aria-invalid="true"], .p5-invalid { outline: 2px solid #ff1e2d; outline-offset: 3px; }
+.p5-login-content .p5-feedback, .p5-register-content .p5-feedback { margin-right: 8px; }
+.p5-register-wrap:has(.p5-feedback:not([hidden])) .p5-register-content { padding-bottom: 18px; }
+
+@media (min-width: 891px) and (min-height: 780px) {
+	.p5-composer { padding-top: 20px; gap: 15px; }
+	.p5-card-heading { margin-bottom: 12px; }
+	.p5-card-headline span { font-size: 31px; }
+	.p5-card-headline strong { font-size: 65px; }
+	.p5-card-seal { width: 82px; height: 82px; }
+	.p5-card-title-input { min-height: 84px; height: 84px; margin-bottom: 16px; font-size: 25px; }
+	.p5-card-body-input { height: 150px; min-height: 150px; }
+	.p5-card-counter { margin-bottom: 12px; }
+	.p5-card-categories { margin-bottom: 15px; }
+	.p5-card-signature { padding-top: 10px; }
+	.p5-card-footer { margin-top: 12px; }
+}
+
+@media (max-width: 1200px) and (min-width: 891px) {
+	.p5-feed-container { max-width: 550px; margin-right: 15px; }
+	.p5-inpost-container { padding-left: 25px; margin-right: 15px; }
+	.p5-composer { padding-left: 25px; margin-right: 15px; }
+}
+@media (max-width: 890px) {
+	.p5-feed-container { margin: 0; max-width: none; padding: 12px 8px 115px; }
+	.p5-request-heading h1 { font-size: 30px; }
+	.p5-request-tabs { gap: 7px; }
+	.p5-request-tab { font-size: 14px; padding: 10px 12px; }
+	.p5-request-tab[aria-pressed="true"]::after { top: 13px; }
+	.p5-feed-title { font-size: 22px; }
+	.p5-feed-post-inner { padding: 16px 14px 18px; gap: 13px; }
+	.p5-feed-avatar { width: 46px; height: 46px; }
+	.p5-feed-desc { font-size: 15px; }
+	.p5-chat-header { position: relative; top: auto; left: auto; right: auto; transform: none; padding: 15px 72px 15px 15px; flex-shrink: 0; }
+	.p5-chat-tools { top: 32px; right: 32px; }
+	.p5-chat-username { font-size: 30px; }
+	.p5-chat-overlay { min-height: 0; overflow: hidden; }
+	.p5-phone-modal { height: calc(100dvh - 72px); }
+	.p5-chat-messages { min-height: 0; }
+	.p5-dm-name { font-size: 17px; }
+	.p5-composer { padding: 42px 12px 40px; margin: 0; max-width: none; gap: 18px; }
+	.p5-composer .p5-back-btn { top: 4px; right: 10px; }
+	.p5-calling-card { padding: 22px; }
+	.p5-composer-masthead { font-size: 10px; }
+	.p5-card-headline strong { font-size: 76px; }
+	.p5-dossier { width: calc(100vw - 30px); max-height: calc(100dvh - 30px); }
+	.p5-feedback-notice { bottom: 16px; left: 12px; width: calc(100vw - 24px); }
+}
+/* Let the entire registration card scroll, including its external OK control. */
+@media (max-width: 890px), (max-height: 740px) {
+	.app-root:has(> .p5-register-wrap) { overflow-y: auto; overflow-x: hidden; scroll-padding: 24px; }
+	.p5-register-wrap, .p5-register-wrap.is-shifted { position: relative; top: auto; left: auto; right: auto; transform: none; margin: 82px auto 110px; max-height: none; height: auto; }
+	.p5-register-card { overflow: visible; clip-path: polygon(0 0, 94% 0, 100% 4%, 100% 100%, 7% 100%, 0 95%); }
+	.p5-register-content { padding-bottom: 34px; }
+	.p5-ok-wrap-register { bottom: -65px; }
+	.p5-register-card .p5-back-btn { right: 12px; top: 20px; }
+	.p5-register-wrap .p5-pfp-panel { position: fixed; top: 90px; left: 50%; right: auto; transform: translateX(-50%) scale(.98); max-height: calc(100dvh - 140px); overflow-y: auto; }
+	.p5-register-wrap .p5-pfp-panel.is-open { transform: translateX(-50%) scale(1); }
+}
+@media (max-width: 480px) {
+	.p5-main-area { padding: 14px 12px 0; }
+	.p5-feed-container { padding: 6px 0 125px; }
+	.p5-feed-list { gap: 20px; }
+	.p5-feed-post-inner { padding: 13px 12px 15px; gap: 11px; }
+	.p5-feed-title { font-size: 21px; line-height: 1.15; }
+	.p5-feed-avatar { width: 40px; height: 40px; }
+	.p5-feed-replies { font-size: 12px; }
+	.p5-feed-post-footer { gap: 14px; }
+	.p5-request-heading h1 { font-size: 28px; }
+	.p5-request-tab { font-size: 13px; padding: 9px 10px; }
+	.p5-request-tab[aria-pressed="true"]::after { top: 12px; }
+	.p5-phone-modal { height: calc(100dvh - 60px); }
+	.p5-chat-header { padding: 14px 64px 14px 12px; }
+	.p5-chat-tools { top: 24px; right: 24px; }
+	.p5-chat-username { font-size: 26px; }
+	.p5-chat-status { width: 9px; height: 9px; }
+	.p5-composer { padding: 40px 4px 40px; }
+	.p5-composer-masthead span:last-child { display: none; }
+	.p5-calling-card { padding: 20px 15px; border-width: 3px; box-shadow: 7px 7px 0 #080808, 9px 9px 0 #aaa; }
+	.p5-card-headline span { font-size: 29px; }
+	.p5-card-headline strong { font-size: 64px; }
+	.p5-card-seal { width: 68px; height: 80px; }
+	.p5-card-title-input { font-size: 24px; }
+	.p5-card-body-input { font-size: 17px; min-height: 190px; }
+	.p5-card-signature strong { font-size: 23px; }
+	.p5-card-footer { align-items: flex-start; }
+	.p5-card-send { width: 100%; font-size: 20px; }
+	.p5-card-sent { font-size: 65px; }
+	.p5-dossier-sheet { padding: 20px 18px 25px; }
+	.p5-dossier-eyebrow { font-size: 11px; letter-spacing: 1px; }
+	.p5-dossier-title { font-size: 44px; margin: 14px 0 22px; }
+	.p5-dossier-content { grid-template-columns: 1fr; gap: 18px; }
+	.p5-dossier-portrait { min-height: 190px; }
+	.p5-dossier-portrait img { height: 190px; width: auto; max-width: 90%; }
+	.p5-dossier-watermark { font-size: 48px; }
+	.p5-dossier-info { padding-top: 0; }
+	.p5-dossier-name { font-size: 34px; }
+	.p5-dossier-stats { margin: 16px 0; }
+	.p5-dossier-stats dd { font-size: 35px; }
+	.p5-dossier-message { width: 100%; }
+	.p5-feedback-portrait { width: 56px; flex-basis: 56px; height: 74px; }
+	.p5-feedback-message { font-size: 17px; }
+	.p5-register-content { padding-bottom: 28px; }
+}
+@media (max-height: 600px) {
+	.app-root:has(> .p5-login-wrap) { overflow-y: auto; overflow-x: hidden; }
+	.p5-login-wrap { position: relative; top: auto; right: auto; margin: 120px auto 100px; }
+	.p5-login-badge { top: -100px; width: 160px; }
+	.p5-logo { top: 18px; width: 180px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0ms !important; scroll-behavior: auto !important; }
+	.p5-page-cut { display: none; }
+}
